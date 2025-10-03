@@ -1,0 +1,5 @@
+.env
+# Ignore Node.js dependencies and config files
+node_modules/
+package-lock.json
+package.json

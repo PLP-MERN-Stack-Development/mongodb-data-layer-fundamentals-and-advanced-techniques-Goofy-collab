@@ -1,59 +1,58 @@
-# MongoDB Fundamentals - Week 1
+# MongoDB CRUD Assignment
 
-## Setup Instructions
+This project demonstrates basic CRUD (Create, Read, Update, Delete) operations using **Node.js** and **MongoDB**.
 
-Before you begin this assignment, please make sure you have the following installed:
+## Prerequisites
 
-1. **MongoDB Community Edition** - [Installation Guide](https://www.mongodb.com/docs/manual/administration/install-community/)
-2. **MongoDB Shell (mongosh)** - This is included with MongoDB Community Edition
-3. **Node.js** - [Download here](https://nodejs.org/)
+Before running the scripts, make sure you have:
 
-### Node.js Package Setup
+- [Node.js](https://nodejs.org/) installed (v14 or above recommended)
+- A MongoDB instance running:
+  - Either locally (`mongodb://127.0.0.1:27017`)
+  - Or on [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) 
 
-Once you have Node.js installed, run the following commands in your assignment directory:
+## Installation
 
-```bash
-# Initialize a package.json file
-npm init -y
+1. Clone or download this repository.
+2. Open the project folder in your terminal.
+3. Install dependencies:
+   ```bash
+   npm install
+````
 
-# Install the MongoDB Node.js driver
-npm install mongodb
+## Running the Script
+
+1. Start your MongoDB server (if running locally).
+2. Run the Node.js script:
+
+   ```bash
+   node insert_books.js
+   ```
+
+## What the Script Does
+
+* Creates/uses a database and a `books` collection
+* Inserts sample book documents
+* Runs queries:
+
+  * Find all Fiction books
+  * Find books published after 1950
+  * Find books by George Orwell
+* Updates the price of *1984*
+* Deletes *Moby Dick*
+
+## Expected Output
+
+When you run the script, you will see the results of each operation printed in the terminal, for example:
+
+```
+Find all Fiction books:
+[ { _id: ..., title: "1984", author: "George Orwell", ... }, ... ]
+
+Find books published after 1950:
+[ ... ]
+
+Update price of '1984':
+{ _id: ..., title: "1984", price: 12.5, ... }
 ```
 
-## Assignment Overview
-
-This week focuses on MongoDB fundamentals including:
-- Creating and connecting to MongoDB databases
-- CRUD operations (Create, Read, Update, Delete)
-- MongoDB queries and filters
-- Aggregation pipelines
-- Indexing for performance
-
-## Submission
-
-Complete all the exercises in this assignment and push your code to GitHub using the provided GitHub Classroom link.
-
-## Getting Started
-
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Install MongoDB locally or set up a MongoDB Atlas account
-4. Run the provided `insert_books.js` script to populate your database
-5. Complete the tasks in the assignment document
-
-## Files Included
-
-- `Week1-Assignment.md`: Detailed assignment instructions
-- `insert_books.js`: Script to populate your MongoDB database with sample book data
-
-## Requirements
-
-- Node.js (v18 or higher)
-- MongoDB (local installation or Atlas account)
-- MongoDB Shell (mongosh) or MongoDB Compass
-
-## Resources
-
-- [MongoDB Documentation](https://docs.mongodb.com/)
-- [MongoDB University](https://university.mongodb.com/)
-- [MongoDB Node.js Driver](https://mongodb.github.io/node-mongodb-native/) 
